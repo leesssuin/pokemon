@@ -11,6 +11,6 @@ assignees: ''
 > description
 
 ## TODO
-- [] tood1
-- [] todo2
-- [] todo3
+- [ ] tood1
+- [ ] todo2
+- [ ] todo3
