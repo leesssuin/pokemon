@@ -9,6 +9,20 @@ const SearchBarSection = styled.section`
   display: flex;
   justify-content: flex-end;
   width: 100%;
+
+  .search-wrap {
+    margin: 1rem;
+
+    input {
+      margin-right: 1rem;
+      width: 15rem;
+      height: 2rem;
+    }
+
+    button {
+      height: 2.35rem;
+    }
+  }
 `;
 
 const SearchBar = () => {
@@ -36,7 +50,7 @@ const SearchBar = () => {
 
   return (
     <SearchBarSection>
-      <div>
+      <div className="search-wrap">
         <input
           name="search"
           type="number"

@@ -1,12 +1,5 @@
 import axios from "./config/axiosInstance";
-import { PokemonInfo, PokemonInfoSpeciesInfo } from "types";
-
-type PageInfo = {
-  count: number;
-  next: string | null;
-  preveious: string | null;
-  results: [];
-};
+import { PageInfo, PokemonInfo, PokemonInfoSpeciesInfo } from "types";
 
 const getListInfo = async <T = PageInfo>() => {
   const response = await axios.get<T>("/pokemon?limit=20&offset=$20");
