@@ -78,7 +78,7 @@ function DetailPage() {
     .state.pokemon as PokemonInfo;
 
   const typeNmae = types.map((item) => item.type.name);
-  console.log(">>>>>", id, location);
+
   return (
     <DetailContainer>
       <div className="detail">
