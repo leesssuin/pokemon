@@ -1,14 +1,18 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { Route, Routes } from "react-router";
+
+import GlobalStyles from "styles/globalStyle";
+import MainPage from "pages/main";
+import { Header } from "components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>TYPESCRIPT</p>
-      </header>
+    <div>
+      <GlobalStyles />
+      <Header />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+      </Routes>
     </div>
   );
 }
