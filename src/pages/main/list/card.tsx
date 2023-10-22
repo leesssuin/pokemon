@@ -1,5 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import styled from "styled-components";
+
 import { PokemonInfo } from "types";
 
 const CardContainer = styled.div`
@@ -31,12 +33,24 @@ const CardContainer = styled.div`
 `;
 
 const Card = ({ pokemonInfo }: { pokemonInfo: PokemonInfo }) => {
-  const { image, name } = pokemonInfo;
+  const navigate = useNavigate();
+
+  const { id, image, name } = pokemonInfo;
 
   return (
     <CardContainer>
-      <div className="card">
+      <div
+        className="card"
+        onClick={() =>
+          navigate(`/${id}`, {
+            state: {
+              pokemon: pokemonInfo,
+            },
+          })
+        }
+      >
         <img src={image} />
+        <p># {id}</p>
         <p>{name}</p>
       </div>
     </CardContainer>

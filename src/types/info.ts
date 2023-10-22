@@ -4,9 +4,13 @@ export interface PokemonInfo {
   abilities: [];
   height: number;
   image: string;
-  types: [];
+  types: { slot: number; type: { name: string; url: string } }[];
   weight: number;
-  species?: PokemonInfoSpeciesInfo;
+  flavor: {
+    flavor_text: string;
+    language: { name: string; url: string };
+    version: { name: string; url: string };
+  }[];
 }
 
 export interface PokemonInfoSpeciesInfo {
