@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import { pokemonListState, totalCountState } from "store/info";
 import { PokemonAPI } from "api";
+import Card from "./card";
 
 const ListSection = styled.section`
   width: 100%;
@@ -11,15 +12,11 @@ const ListSection = styled.section`
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  .card {
-    width: 100%;
-    border: 1px solid black;
+    padding: 3rem 3rem;
   }
 `;
 
-export default function ListPage() {
+const List = () => {
   const [startIdx, setStartIdx] = useState(0);
 
   const totalCount = useRecoilValue(totalCountState);
@@ -27,7 +24,7 @@ export default function ListPage() {
 
   useEffect(() => {
     const getInfo = async () => {
-      let totalInfoArray = [];
+      const totalInfoArray = [];
 
       for (let i = 0; i < startIdx + 20; i++) {
         try {
@@ -50,12 +47,11 @@ export default function ListPage() {
     <ListSection>
       <div className="container">
         {pokemonList?.map((pokemon, idx) => (
-          <div key={idx}>
-            <img src={pokemon.image} />
-            <p>{pokemon.name}</p>
-          </div>
+          <Card pokemonInfo={pokemon} key={idx} />
         ))}
       </div>
     </ListSection>
   );
-}
+};
+
+export default List;
