@@ -19,8 +19,9 @@ const SearchBar = () => {
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       setSearchId(event.target.value);
-    }
-    , []);
+    },
+    [],
+  );
 
   const HandleSearchButtonClick = async () => {
     try {
@@ -29,7 +30,7 @@ const SearchBar = () => {
 
       setPokemonList([{ ...defaultInfo, ...speciesInfo }]);
     } catch (err) {
-      console.log(err);
+      alert("데이터를 불러오는데 문제가 발생했습니다.");
     }
   };
 
