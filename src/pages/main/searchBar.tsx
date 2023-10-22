@@ -14,9 +14,9 @@ const SearchBarSection = styled.section`
     margin: 1rem;
 
     input {
+      margin-right: 1rem;
       width: 15rem;
       height: 2rem;
-      margin-right: 1rem;
     }
 
     button {
